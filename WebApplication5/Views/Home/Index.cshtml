@@ -1,0 +1,87 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<style>
+    .box {
+        border: 1px solid black;
+        padding: 10px;
+        background-color: #C4F6F1;
+    }
+   
+
+</style>
+
+<header>
+<img src="images/head.jpg" height="250px" width="100%"/>
+</header>
+
+<body>
+
+    <h1>Check out our latest models of home appliances which could perfectly fit in your home!!!</h1><br /><br />
+    <div class="box">
+        <img src="images/fridge_home.jpeg" />
+        <p>
+            What if your refrigerator could tell you if its door has been left open,
+            or it's running out of ice? What if you could ask it — while you're at the grocery store — if you need to get more eggs or milk?
+        </p>
+        <p>
+            Those are some of the features available with "smart" refrigerators that are connected to your smartphone via the internet.
+            This guide will help show what smart refrigerators can do, how much they cost, who makes them — and if they're worth it.
+        </p>
+    </div>
+    <br /><br /><br />
+                <div class="box">
+                    <img src="images/iron_home.jpeg" />
+                    <p>
+                        Steam iron works on the principle of conversion of electrical energy into heat energy, and then this heat energy is used for the ironing purpose.
+                        Electric current passes through the coil or other heating material that is present in the iron.
+                    </p>
+
+                    <p>
+                        @Html.ActionLink("Create New", "Create")
+                    </p>
+                    <table class="table">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Name)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Price)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Model)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.id)
+                            </th>
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Model)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.id)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                    </td>
+                </tr>}
+
+                    </table>
+
+
+                </div>
+</body>

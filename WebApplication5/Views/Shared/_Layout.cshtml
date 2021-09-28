@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Online Electronic store</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("PRO TECH GEAR", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("TV's", "AllProducts", "Products")</li>
+                            <li>@Html.ActionLink("Mobile phones", "AllProducts", "Products")</li>
+                            <li>@Html.ActionLink("Household appliances", "AllProducts", "Products")</li>
+                            <li>@Html.ActionLink("Computers", "AllProducts", "Products")</li>
+                            <li>@Html.ActionLink("All Products", "AllProducts", "Products")</li>
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("About Us", "Aboutus", "Home")</li>
+                    <li>@Html.ActionLink("New item", "NewProduct", "Products")</li>
+                    <li>@Html.ActionLink("Login/Register", "Login", "Products")</li>
+                    <li><a href="#shop"><span class="glyphicon glyphicon-shopping-cart">Shop</span></a></li>
+                </ul>
+             </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Pro Tech Gear</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

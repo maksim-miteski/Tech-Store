@@ -1,0 +1,71 @@
+﻿@model List<WebApplication5.Models.Product>
+
+@{
+    ViewBag.Title = "All Products";
+}
+
+<header>
+<img src="images/head.jpg" height="250px" width="100%" />
+</header>
+
+<style>
+    div.gallery {
+        border: 1px solid #ccc;
+    }
+
+        div.gallery:hover {
+            border: 1px solid #777;
+        }
+
+        div.gallery img {
+            width: 100%;
+            height: auto;
+        }
+
+    div.desc {
+        padding: 15px;
+        text-align: center;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .responsive {
+        padding: 0 6px;
+        float: left;
+        width: 24.99999%;
+    }
+</style>
+
+
+<h3>Products:</h3>
+<ul>
+    @{
+        int i = 0;
+        foreach (var c in Model)
+        {
+            <li>
+                <div class="responsive">
+                    <div class="gallery">
+                        <img src="images/tv1.jpeg" alt="Cinque Terre" width="600" height="400">
+                        <h4>
+                            @Html.ActionLink(c.Name, "ShowProduct", new { id = i })
+                            @Html.ActionLink("Edit", "EditMovie", new { id = i })
+                            @Html.ActionLink("Delete", "DeleteMovie", new { id = i })
+                        </h4>
+                        <div class="desc">
+                            <p>40" UHD 4K Flat Smart TV JU6000 Series 6</p>
+                            <p> Price: $899.90</p>
+
+                        </div>
+                    </div>
+                </div>
+            </li>
+            i++;
+        }
+    }
+
+
+</ul>
+

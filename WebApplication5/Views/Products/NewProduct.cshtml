@@ -1,0 +1,49 @@
+﻿@model WebApplication5.Models.Product
+
+@{
+    ViewBag.Title = "NewItem";
+}
+
+<style>
+    body {
+        background-color: #CBDCDA;
+    }
+
+    h2{
+        font-style:italic;
+    }
+
+
+</style>
+
+<body>
+<h2>Insert new Item</h2>
+
+@using (Html.BeginForm("InsertNewProduct", "Productss"))
+{
+    <div class="form-group">
+        @Html.LabelFor(p => p.Name)
+        @Html.TextBoxFor(p => p.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(p => p.Name)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(p => p.Model)
+        @Html.TextBoxFor(p => p.Model, new { @class = "form-control", type = "number" })
+        @Html.ValidationMessageFor(p => p.Model)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(p => p.ImgURL)
+        @Html.TextBoxFor(p => p.ImgURL, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(p => p.Price)
+        @Html.TextBoxFor(p => p.Price, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(p => p.id)
+        @Html.TextBoxFor(p => p.id, new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+}
+   
+</body>

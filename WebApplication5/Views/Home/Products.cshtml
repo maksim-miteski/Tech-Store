@@ -1,0 +1,97 @@
+﻿@{
+    ViewBag.Title = "Products";
+ }
+
+
+
+
+<style>
+    div.gallery {
+        border: 1px solid #ccc;
+    }
+
+        div.gallery:hover {
+            border: 1px solid #777;
+        }
+
+        div.gallery img {
+            width: 100%;
+            height: auto;
+        }
+
+    div.desc {
+        padding: 15px;
+        text-align: center;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .responsive {
+        padding: 0 6px;
+        float: left;
+        width: 24.99999%;
+    }
+
+</style>
+
+<header>
+    <img src="images/head.jpg" height="250px" width="100%" />
+</header>
+
+@Html.TextBox("id", ViewBag.CurrentFilter as string)
+<input type="submit" value="Search" />
+
+<body>
+    <h1>We have everything you need!!</h1>
+
+   
+                <li>
+                    <h3>TV's</h3>
+                    <div class="responsive">
+                        <div class="gallery">
+                            <a target="_blank" href="img_5terre.jpg">
+                                <img src="images/tv1.jpeg" alt="Cinque Terre" width="600" height="400">
+                            </a>
+                            <div class="desc">
+                                <p>40" UHD 4K Flat Smart TV JU6000 Series 6</p>
+                                <p> Price: $899.90</p>
+                 
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                 
+                        <li>
+                        <div class="responsive">
+                            <div class="gallery">
+                                <a target="_blank" href="img_5terre.jpg">
+                                    <img src="images/tv2.jpeg" alt="Cinque Terre" width="600" height="400">
+                                </a>
+                                <div class="desc">
+                                    <p>The 55" version of this TV (Samsung - 55" Class - LED - NU6900 Series - 2160p - Smart - 4K UHD TV with HDR)</p>
+                                    <p>Price: $785.65</p>
+                                </div>
+                            </div>
+                        </div>
+                        </li>
+                        
+
+                <li>
+                <div class="responsive">
+                    <div class="gallery">
+                        <a target="_blank" href="img_5terre.jpg">
+                            <img src="images/tv3.jpeg" alt="Cinque Terre" width="600" height="400">
+                        </a>
+                        <div class="desc">
+                            <p>LG UHD 4K TV 55 Inch UN80 Series, Cinema Screen Design 4K Active HDR WebOS Smart AI ThinQ</p>
+                            <p>Price: $655.90</p>
+                        </div>
+                    </div>
+                </div>
+                    </li>
+          
+    </ul>
+
+</body>

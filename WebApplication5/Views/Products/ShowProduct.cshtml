@@ -1,0 +1,29 @@
+﻿@model WebApplication5.Models.Transactions
+
+@{
+    ViewBag.Title = "ShowProduct";
+}
+
+<h2>Product: @Model.Product.Name</h2>
+<img src="@Model.Product.ImgURL" />
+<p>Price: $@Model.Product.Price</p>
+<p>Model: @Model.Product.Model</p>
+<p>Identification number: @Model.Product.id</p>
+
+
+
+<h3>Clients: </h3>
+<ul>
+    @{
+
+        int i = 0;
+        foreach (var c in Model.Customers)
+        {
+            <li>
+                @Html.ActionLink(c.Name, "ShowClient", new { id = i })
+                @*<a href="ShowClient/@i">@c.Name</a>*@
+            </li>
+            i++;
+        }
+    }
+</ul>
